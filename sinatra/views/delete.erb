@@ -1,0 +1,10 @@
+<% if @note %>
+	<p>Notu silmek istediğinize emin misiniz: <em>"<%= @note.content %>"</em>?</p>
+	<form action="/<%= @note.id %>" method="post">
+		<input type="hidden" name="_method" value="delete">
+		<input type="submit" value="Evet, sil!">
+		<a href="/<%= @note.id %>">İptal</a>
+	</form>
+<% else %>
+	<p>Not bulunamadı.</p>
+<% end %>
